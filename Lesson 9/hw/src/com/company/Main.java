@@ -11,11 +11,9 @@ public class Main {
         farmAnimlas[2] = new Sheep();
         farmAnimlas[3] = new Duck();
 
-        new Cow().makeSound();
-        new Rooster().crow();
-        new Animal().makeSound();
-        new Sheep().bleat();
-        new Duck().makeSound();
+        for (int i = 0; i < farmAnimals.length; i++) {
+            farmAnimals[i].makeSound();
+        }
     }
 }
 
