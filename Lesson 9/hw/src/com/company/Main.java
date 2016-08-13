@@ -13,8 +13,16 @@ public class Main {
         farmAnimlas[4] = new Calf();
         ((Calf) farmAnimlas[4]).name = "Igi";
 
+<<<<<<< HEAD
         Calf igi = new Calf();
 //        washAnimal(igi);
+=======
+        for (int i = 0; i < farmAnimals.length; i++) {
+            farmAnimals[i].makeSound();
+        }
+    }
+}
+>>>>>>> origin/master
 
         for (Animal animal : farmAnimlas) {
             animal.makeSound();
@@ -93,6 +101,7 @@ public class Main {
             bleat();
         }
     }
+<<<<<<< HEAD
 
     class Duck extends Animal {
         void quack() {
@@ -103,3 +112,6 @@ public class Main {
             quack();
         }
     }
+=======
+}
+>>>>>>> origin/master
