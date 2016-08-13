@@ -10,15 +10,15 @@ public class Segment {
     private boolean isLengthCalculated;
 
     public Segment(Point p1, Point p2) {
-        //aliasing
-        //this.p1 = new Point(p1.getX(), p1.getY());
+        //aliasing - Kinuy
+        //this.p1 = new Point(p1.getX(), p1.getY()); - creating another copy of p1
         this.p1 = p1;
         this.p2 = p2;
         isLengthCalculated = false;
     }
 
     public Point getP1() {
-        //Point p = new Point(p1.getX(), p1.getY());
+        //Point p = new Point(p1.getX(), p1.getY()); - A copy of p1 - without changing the p1 parameter
         //return p;
         return p1;
     }
@@ -43,7 +43,7 @@ public class Segment {
     }
 
 
-    public double slope() {
+    public double slope() {// - Shipu'a
         double deltaY = p1.getY() - p2.getY();
         double deltaX = p1.getX() - p2.getX();
         if (deltaX == 0)

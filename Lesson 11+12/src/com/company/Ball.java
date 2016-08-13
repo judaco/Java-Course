@@ -17,7 +17,7 @@ public class Ball extends Circle {
 
     @Override
     public double area() {
-        return 4 * super.area();
+        return 4 * super.area();//drisa, and then we get the sum, a method from Circle
     }
 
     void bounce(){

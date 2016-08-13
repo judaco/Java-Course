@@ -6,14 +6,12 @@ package graphicshape;
 public class Square extends Rectangle {
 
     public Square(int side){
-        super(side, side);
+        super(side, side);//super is the Father - referring the Shape
     }
 
     public void setSide(int side){
         super.setWidth(side);
         super.setHeight(side);
-
-
     }
 
     @Override
