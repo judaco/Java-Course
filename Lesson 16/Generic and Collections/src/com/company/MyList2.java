@@ -43,32 +43,76 @@ public class MyList2 implements  Listable {
 
     @Override
     public void addAt(int index, int num) {
-
+        if(index < 0 || index >= pos)
+            throw new IndexOutOfBoundsException();
+        Link theOneBefore = anchor;
+        for (int i = 0; i < index; i++) {
+            theOneBefore = theOneBefore.next;
+        }
+        Link added = new Link(num);
+        added.next = theOneBefore.next;
+        theOneBefore.next = added;
+        pos++;
     }
 
     @Override
     public void set(int index, int num) {
-
+        if(index < 0 || index >= pos)
+            throw new IndexOutOfBoundsException();
+        Link link = anchor;
+        for (int i = 0; i <= index; i++) {
+            link = link.next;
+        }
+        link.value = num;
     }
 
     @Override
     public int get(int index) {
-        return 0;
+        if(index < 0 || index >= pos)
+            throw new IndexOutOfBoundsException();
+        Link link = anchor;
+        for (int i = 0; i <= index; i++) {
+            link = link.next;
+        }
+        return link.value;
     }
 
     @Override
     public int indexOf(int num) {
-        return 0;
+        Link link = anchor;
+        int counter = 0;
+        while(link.next != null){
+            link = link.next;
+            if(link.value == num)
+                return counter;
+            counter++;
+        }
+        return -1;
+        /*
+         Link a = anchor.next;
+        for (int i = 0; i < pos; i++) {
+            if(a.value == num)
+                return i;
+            a = a.next;
+        }
+        return -1;
+        */
     }
 
     @Override
     public int[] toArray() {
-        return new int[0];
+        int[] arr = new int[pos];
+        Link link = anchor;
+        for (int i = 0; i < pos; i++) {
+            link = link.next;
+            arr[i] = link.value;
+        }
+        return arr;
     }
 
     @Override
     public int size() {
-        return 0;
+        return pos;
     }
 
     static class Link{
@@ -79,6 +123,21 @@ public class MyList2 implements  Listable {
             this.value = value;
         }
     }
-
+    @Override
+    public String toString() {
+        if(pos == 0){
+            return "{}";
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("{");
+        Link link = anchor;
+        for (int i = 0; i < pos - 1; i++) {
+            link = link.next;
+            stringBuilder.append(link.value + ",");
+        }
+        stringBuilder.append(last.value);
+        stringBuilder.append("}");
+        return stringBuilder.toString();
+    }
 
 }
