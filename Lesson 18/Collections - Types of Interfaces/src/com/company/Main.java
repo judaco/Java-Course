@@ -34,7 +34,7 @@ public class Main {
         myString3.add("Benjamin");
         for (String s : myString3) {
             System.out.println(s);
-        }
+    }
 
         Set<String > myString4 = new TreeSet<>();
 
