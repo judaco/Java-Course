@@ -17,7 +17,7 @@ public class Main {
                 for (int i = 0; i < 10; i++) {
                     System.out.println(i);
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(1000);//deciding in how much time I am checking again the Thread
                     } catch (InterruptedException e) {
                     }
                 }
@@ -25,9 +25,9 @@ public class Main {
         };
         Thread t1 = new Thread(r);
         Thread t2 = new Thread(r);
-        t1.setName("t1");
+        t1.setName("t1");//define the Thread's name
         t2.setName("t2");
-        t1.setPriority(5);
+        t1.setPriority(5);//making priortiy to some Thread, deciding which of 2 Threads is more important
         t1.start();
         t2.start();
         t1.interrupt();*/
@@ -43,7 +43,7 @@ public class Main {
 
         Map<String, String> users = new HashMap<>();
         boolean success = false;
-        synchronized (users) {
+        synchronized (users) {//lock this address in memory of "users"
             if (!users.containsKey("Liran")) {
                 users.put("Liran", "12345");
                 success = true;
