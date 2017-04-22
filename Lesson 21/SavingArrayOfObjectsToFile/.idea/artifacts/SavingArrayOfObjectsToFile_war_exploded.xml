@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SavingArrayOfObjectsToFile:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SavingArrayOfObjectsToFile_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SavingArrayOfObjectsToFile/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SavingArrayOfObjectsToFile" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
